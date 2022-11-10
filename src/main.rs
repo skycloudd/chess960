@@ -148,7 +148,6 @@ struct Piece {
 impl std::fmt::Display for Piece {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         let piece_type = match self.piece_type {
-            PieceType::Empty => " ",
             PieceType::Pawn => "p",
             PieceType::Knight => "n",
             PieceType::Bishop => "b",
@@ -172,7 +171,7 @@ enum Color {
 
 #[derive(Clone, Copy)]
 enum PieceType {
-    Empty,
+    #[allow(dead_code)]
     Pawn,
     Knight,
     Bishop,
